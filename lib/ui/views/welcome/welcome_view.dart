@@ -1,33 +1,28 @@
+import 'package:counter/ui/views/welcome/welcome_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-import 'home_viewmodel.dart';
-
-class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+class WelcomeView extends StatelessWidget {
+  const WelcomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<HomeViewModel>.reactive(
+    return ViewModelBuilder<WelcomeViewModel>.reactive(
+      viewModelBuilder: () => WelcomeViewModel(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
           title: Text("Counter App"),
         ),
         body: Center(
             child: Text(
-          "Current count is ${model.count}",
+          "Current count is ${model.title}",
           style: TextStyle(
             color: Colors.blueAccent,
             fontSize: 25,
             fontWeight: FontWeight.bold,
           ),
         )),
-        floatingActionButton: FloatingActionButton(
-          onPressed: model.updateCounter,
-          child: Icon(Icons.add),
-        ),
       ),
-      viewModelBuilder: () => HomeViewModel(),
     );
   }
 }
