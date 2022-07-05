@@ -13,15 +13,29 @@ class HomeView extends StatelessWidget {
         appBar: AppBar(
           title: Text("Counter App"),
         ),
-        body: Center(
-            child: Text(
-          "Current count is ${model.count}",
-          style: TextStyle(
-            color: Colors.blueAccent,
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-          ),
-        )),
+        body: Column(
+          children: [
+            SizedBox(
+              height: 50,
+            ),
+            Center(
+                child: Text(
+              "Current count is ${model.count}",
+              style: TextStyle(
+                color: Colors.blueAccent,
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+              ),
+            )),
+            SizedBox(
+              height: 170,
+            ),
+            ElevatedButton(
+              onPressed: model.gotoWelcome,
+              child: Text("Click me"),
+            ),
+          ],
+        ),
         floatingActionButton: FloatingActionButton(
           onPressed: model.updateCounter,
           child: Icon(Icons.add),
