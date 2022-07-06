@@ -1,11 +1,10 @@
+import 'package:counter/api/api_service.dart';
+import 'package:counter/app/app.router.dart';
+import 'package:counter/app/locator.dart';
 import 'package:counter/model/todo_responce.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
-
-import '../../../api/api_service.dart';
-import '../../../app/locator.dart';
-import '../../../app/router.router.dart';
 
 class HomeViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
